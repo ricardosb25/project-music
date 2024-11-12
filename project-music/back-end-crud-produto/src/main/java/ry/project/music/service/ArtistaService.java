@@ -3,37 +3,37 @@ package ry.project.music.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ry.project.music.entity.Produto;
-import ry.project.music.repository.ProdutoRepository;
+import ry.project.music.repository.ArtistaRepository;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ProdutoService {
+public class ArtistaService {
 
     @Autowired
-    ProdutoRepository produtoRepository;
+    ArtistaRepository artistaRepository;
 
     public List<Produto> getAllProductsService() {
-        List<Produto> produtos = produtoRepository.findAll();
+        List<Produto> produtos = artistaRepository.findAll();
         return produtos;
     }
 
     public Optional<Produto> getProductService(Integer id){
-        return produtoRepository.findById(id);
+        return artistaRepository.findById(id);
     }
 
     public Produto insertProductService(Produto produto){
-        return produtoRepository.save(produto);
+        return artistaRepository.save(produto);
     }
 
     public void deleteProductByIdService(Integer id){
-        produtoRepository.deleteById(id);
+        artistaRepository.deleteById(id);
     }
 
     public Produto updateProductService(Produto produto){
-        Produto updatedProduct = produtoRepository.findById(produto.getId()).get();
+        Produto updatedProduct = artistaRepository.findById(produto.getId()).get();
         updatedProduct = produto;
-        return produtoRepository.save(updatedProduct);
+        return artistaRepository.save(updatedProduct);
     }
 }

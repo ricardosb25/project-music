@@ -5,21 +5,21 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ry.project.music.entity.Produto;
-import ry.project.music.service.ProdutoService;
+import ry.project.music.service.ArtistaService;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/song")
-public class ProdutoController {
+@RequestMapping("/produto")
+public class ArtistaController {
 
     @Autowired
-    ProdutoService produtoService;
+    ArtistaService artistaService;
 
     // retorna lista de produtos
     @GetMapping("/listall")
     public ResponseEntity<List<Produto>> getAllProducts() {
-        List<Produto> produtos = produtoService.getAllProductsService();
+        List<Produto> produtos = artistaService.getAllProductsService();
         return ResponseEntity.ok(produtos);
     }
 
@@ -27,7 +27,7 @@ public class ProdutoController {
     // retorna os dados de um produto cujo id é fornecido
     @GetMapping("/list/{id}")
     public ResponseEntity<Optional<Produto>> getProductService(@PathVariable Integer id) {
-        Optional<Produto> produto = produtoService.getProductService(id);
+        Optional<Produto> produto = artistaService.getProductService(id);
         return ResponseEntity.ok(produto);
     }
     */
@@ -36,7 +36,7 @@ public class ProdutoController {
     //@CrossOrigin
     @GetMapping("/list/{id}")
     public ResponseEntity<Produto> getProductService(@PathVariable Integer id) {
-        var produto = produtoService.getProductService(id);
+        var produto = artistaService.getProductService(id);
         if (produto.isEmpty()){
             return ResponseEntity.notFound().build();
         }
@@ -48,21 +48,21 @@ public class ProdutoController {
     //insere produto na base de dados
     @PostMapping("/add")
     public ResponseEntity<Produto> addProduct(@RequestBody Produto produto){
-        Produto newProduct = produtoService.insertProductService(produto);
+        Produto newProduct = artistaService.insertProductService(produto);
         return new ResponseEntity<>(newProduct, HttpStatus.CREATED);
     }
 
     //atualiza produto na base de dados
     @PutMapping("/update")
     public ResponseEntity<Produto> updateProduct(@RequestBody Produto produto){
-        Produto updatedProduct = produtoService.updateProductService(produto);
+        Produto updatedProduct = artistaService.updateProductService(produto);
         return ResponseEntity.ok(updatedProduct);
     }
 
     //delete os dados de um produto cujo id é fornecido
     @DeleteMapping("delete/{id}")
     public ResponseEntity<Void> deleteProduct(@PathVariable Integer id){
-        produtoService.deleteProductByIdService(id);
+        artistaService.deleteProductByIdService(id);
         return ResponseEntity.noContent().build();
     }
 }
