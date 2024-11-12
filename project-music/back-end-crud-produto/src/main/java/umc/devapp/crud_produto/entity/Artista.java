@@ -13,8 +13,8 @@ public class Artista {
     @Column(name = "idade")
     private double idade;
     @Column(name = "banda")
-    private string banda;
+    private String banda;
     @Column(name = "pais")
-    private string pais;
+    private String pais;
     
 }
