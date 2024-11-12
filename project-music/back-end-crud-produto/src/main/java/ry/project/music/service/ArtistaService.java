@@ -2,7 +2,7 @@ package ry.project.music.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ry.project.music.entity.Produto;
+import ry.project.music.entity.Artista;
 import ry.project.music.repository.ArtistaRepository;
 
 import java.util.List;
@@ -14,26 +14,26 @@ public class ArtistaService {
     @Autowired
     ArtistaRepository artistaRepository;
 
-    public List<Produto> getAllProductsService() {
-        List<Produto> produtos = artistaRepository.findAll();
-        return produtos;
+    public List<Artista> getAllArtistsService() {
+        List<Artista> artistas = artistaRepository.findAll();
+        return artistas;
     }
 
-    public Optional<Produto> getProductService(Integer id){
+    public Optional<Artista> getArtistService(Integer id){
         return artistaRepository.findById(id);
     }
 
-    public Produto insertProductService(Produto produto){
-        return artistaRepository.save(produto);
+    public Artista insertArtistService(Artista artista){
+        return artistaRepository.save(artista);
     }
 
-    public void deleteProductByIdService(Integer id){
+    public void deleteArtistByIdService(Integer id){
         artistaRepository.deleteById(id);
     }
 
-    public Produto updateProductService(Produto produto){
-        Produto updatedProduct = artistaRepository.findById(produto.getId()).get();
-        updatedProduct = produto;
-        return artistaRepository.save(updatedProduct);
+    public Artista updateArtistService(Artista artista){
+        Artista updatedArtist = artistaRepository.findById(artista.getId()).get();
+        updatedArtist = artista;
+        return artistaRepository.save(updatedArtist);
     }
 }
