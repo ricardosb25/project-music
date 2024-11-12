@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>App Web Consumidor API CRUD Produtos</title>
+        <link rel="stylesheet" href="styles/estilo.css">
+        <script type="text/javascript" src="scripts/script_updateproduct.js"></script>
+    </head>
+    <body>
+        <a href="listallproducts.html"><button>listar produtos</button></a>
+        <h1>Consumidor API Update Product</h1>
+        <form class="formupdate" id="formupdate" name="formupdate">
+            <div>
+                <label>Descrição</label>
+                <input type="text" name="descricao" id="descricao">
+            </div>
+            <div>
+                <label>Preço</label>
+                <input type="text" name="preco" id="preco">
+            </div>
+            <div>
+                <button type="submit"  onclick="updateProduct()">Cadastrar</button>
+            </div>
+        </form>
+    </body>
+</html>
