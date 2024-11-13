@@ -31,15 +31,6 @@ public class ArtistaController {
         return ResponseEntity.ok(artistas);
     }
 
-    /*
-    // retorna os dados de um artista cujo id é fornecido
-    @GetMapping("/list/{id}")
-    public ResponseEntity<Optional<Artista>> getArtistService(@PathVariable Integer id) {
-        Optional<Artista> artista = artistaService.getArtistService(id);
-        return ResponseEntity.ok(artista);
-    }
-    */
-
 
     //@CrossOrigin
     @GetMapping("/list/{id}")
