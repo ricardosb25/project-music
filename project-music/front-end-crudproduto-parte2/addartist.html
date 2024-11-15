@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>App Web Consumidor API CRUD Artistas</title>
+        <link rel="stylesheet" href="styles/estilo.css">
+        <script type="text/javascript" src="scripts/script_addartist.js"></script>
+    </head>
+    <body>
+        <a href="listallartists.html"><button>listar artistas</button></a>
+        <h1>Consumidor API Add Artista</h1>
+        <form class="formadd" id="formadd" name="formadd">
+            <div>
+                <label>Nome</label>
+                <input type="text" name="nome" id="nome">
+            </div>
+            <div>
+                <label>Idade</label>
+                <input type="text" name="idade" id="idade">
+            </div>
+            <div>
+                <label>Banda</label>
+                <input type="text" name="banda" id="banda">
+            </div>
+            <div>
+                <label>País</label>
+                <input type="text" name="pais" id="pais">
+            </div>
+            <div>
+                <button type="submit"  onclick="addArtist()">Cadastrar</button>
+            </div>
+        </form>
+    </body> 
+</html>
