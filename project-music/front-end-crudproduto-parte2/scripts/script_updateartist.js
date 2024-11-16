@@ -1,54 +1,68 @@
-async function listById() {
-    const id = document.getElementById("listbyid").value;
-    if (!id) {
-        alert("Por favor, insira um ID válido");
+function getQueryParameter() {
+    const url = new URL(window.location.href);
+    const id = url.searchParams.get('id');
+    return id;
+}
+
+function clearTextFields() {
+    document.getElementById("nome").value = "";
+    document.getElementById("idade").value = "";
+    document.getElementById("banda").value = "";
+    document.getElementById("pais").value = "";
+}
+
+async function loadArtistData() {
+    const artistId = getQueryParameter();
+    if (!artistId) {
+        alert('ID do artista não encontrado.');
         return;
     }
 
-    const url = `http://localhost:8080/artista/list/${id}`;
-    try {
-        const result = await fetch(url, { method: "GET" });
-        if (result.status === 200) {
-            const artist = await result.json();
-            showArtist(artist);
-        } else {
-            alert('artista não encontrado');
-        }
-    } catch (error) {
-        console.error('Erro:', error);
-        alert('Erro ao buscar artista');
+    const url = `http://localhost:8080/artista/list/${artistId}`;
+    const response = await fetch(url, { method: "GET" });
+
+    if (response.status === 200) {
+        const artist = await response.json();
+        document.getElementById('artistId').value = artist.id;
+        document.getElementById('nome').value = artist.nome;
+        document.getElementById('idade').value = artist.idade;
+        document.getElementById('banda').value = artist.banda;
+        document.getElementById('pais').value = artist.pais;
+    } else {
+        alert('Erro ao carregar os dados do artista.');
     }
 }
 
-function showArtist(artist) {
-    
+async function updateArtist() {
+    const artistId = document.getElementById('artistId').value;
+    const nome = document.getElementById('nome').value;
+    const idade = document.getElementById('idade').value;
+    const banda = document.getElementById('banda').value;
+    const pais = document.getElementById('pais').value;
 
-    document.getElementById("artists").innerHTML = tab;
-}
-
-
-
-async function updateArtist(id) {
-    const formE1 = document.querySelector("#formupdate");
-    const formData = new FormData(formE1);
-    const artist = Object.fromEntries(formData);
-    const url = "http://localhost:8080/artista/update";
-    const option = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(artist)
+    const data = {
+        nome: nome,
+        idade: idade,
+        banda: banda,
+        pais: pais
     };
 
-    try {
-        const result = await fetch(url, option);
-        if (result.status === 201) {
-            alert('Atualizado com sucesso');
-            location.reload(); 
-        } else {
-            alert('Erro ao atualizar');
-        }
-    } catch (error) {
-        console.error('Erro:', error);
-        alert('Erro ao atualizar');
+    const url = `http://localhost:8080/artista/update`;
+    const option = {
+        method: 'PUT', 
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ id: artistId, ...data })
+    };
+
+    const result = await fetch(url, option);
+    if (result.status === 200) {
+        alert('Artista atualizado com sucesso!');
+        window.location.href = 'listallartists.html'; 
+    } else {
+        alert('Erro ao atualizar o artista.');
     }
 }
+
+loadArtistData();

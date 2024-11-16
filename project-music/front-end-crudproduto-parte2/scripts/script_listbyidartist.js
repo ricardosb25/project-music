@@ -12,7 +12,7 @@ async function listById() {
             const artist = await result.json();
             showProduct(artist);
         } else {
-            alert('Produto não encontrado');
+            alert('Produto não encontradnameo');
         }
     } catch (error) {
         console.error('Erro:', error);
