@@ -5,38 +5,38 @@ async function listById() {
         return;
     }
 
-    const url = `http://localhost:8080/produto/list/${id}`;
+    const url = `http://localhost:8080/artista/list/${id}`;
     try {
         const result = await fetch(url, { method: "GET" });
         if (result.status === 200) {
-            const product = await result.json();
-            showProduct(product);
+            const artist = await result.json();
+            showArtist(artist);
         } else {
-            alert('Produto não encontrado');
+            alert('artista não encontrado');
         }
     } catch (error) {
         console.error('Erro:', error);
-        alert('Erro ao buscar produto');
+        alert('Erro ao buscar artista');
     }
 }
 
-function showProduct(product) {
+function showArtist(artist) {
     
 
-    document.getElementById("products").innerHTML = tab;
+    document.getElementById("artists").innerHTML = tab;
 }
 
 
 
-async function updateProduct(id) {
+async function updateArtist(id) {
     const formE1 = document.querySelector("#formupdate");
     const formData = new FormData(formE1);
-    const product = Object.fromEntries(formData);
-    const url = "http://localhost:8080/produto/update";
+    const artist = Object.fromEntries(formData);
+    const url = "http://localhost:8080/artista/update";
     const option = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(product)
+        body: JSON.stringify(artist)
     };
 
     try {
