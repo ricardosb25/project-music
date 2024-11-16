@@ -7,7 +7,7 @@ function showArtists(artists) {
     let tab = `
         <thead>
             <tr>
-                <th>id</th>
+                <th>Id</th>
                 <th>Nome</th>
                 <th>Idade</th>
                 <th>Banda</th>
