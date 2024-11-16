@@ -1,5 +1,5 @@
-async function deleteProduct(id) {
-    const url = `http://localhost:8080/produto/delete/${id}`;
+async function deleteArtist(id) {
+    const url = `http://localhost:8080/artista/delete/${id}`;
     const option = {
         method: 'DELETE',
         headers: {
@@ -11,7 +11,7 @@ async function deleteProduct(id) {
         const result = await fetch(url, option);
         if (result.status === 204) {
             alert('Deletado com sucesso');
-            location.reload();  
+            location.reload(); 
         } else {
             alert('Erro ao deletar');
         }
