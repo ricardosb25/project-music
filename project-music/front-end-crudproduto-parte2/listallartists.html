@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0,
+                                            maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>App Web Consumidor API CRUD Artistas</title>
+    <link rel="stylesheet" href="styles/estilo.css">
+    <script type="text/javascript" src="scripts/script_listallartists.js"></script>
+    <script type="text/javascript" src="scripts/script_deleteartist.js"></script>
+    <script type="text/javascript" src="scripts/script_listbyidartist.js"></script>
+</head>
+<body>
+    <div class="mydiv-1">
+        <input type="text" name="listbyid" id="listbyid">
+        <button onclick="listById()">Procurar</button>
+        <div id="loading">
+            <span>Buscando artistas...</span>
+        </div>
+        <h1>Consumidor API ListAll Artists</h1>
+        <button onclick="listAllArtists()">reload</button>
+        <a href="addartist.html"><button>adicionar</button></a>
+        <table>
+            <tbody id="artists"></tbody>
+        </table>
+    </div>
+</body>
+</html>
