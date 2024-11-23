@@ -34,7 +34,7 @@ function showSongs(songs) {
 }
 
 async function listAllSongs() {
-    const url = "http://localhost:8080/songa/listall";
+    const url = "http://localhost:8080/musica/listall";
     const dados = await fetch(url, { method: "GET" });
     if (dados.status === 200) {
         const songs = await dados.json();
