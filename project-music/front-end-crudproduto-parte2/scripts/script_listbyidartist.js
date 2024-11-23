@@ -42,8 +42,8 @@ function showProduct(artist) {
             <td>${artist.idade}</td>
             <td>${artist.banda}</td>
             <td>${artist.pais}</td>
-            <td><button onclick="updateProduct(${artist.id})"><img src="images/edit01.png" width="20" height="15"></button></td>
-            <td><button onclick="deleteProduct(${artist.id})"><img src="images/trash01.png" width="20" height="15"></button></td>
+            <td><a href='updateartist.html?id=${artist.id}'><img src="images/edit01.png" width="20" height="15"></a></td>
+                <td><button onclick="deleteArtist(${artist.id})"><img src="images/trash01.png" width="20" height="15"></button></td>
         </tr>
     `;
 
