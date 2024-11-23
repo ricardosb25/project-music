@@ -8,16 +8,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>App Web Consumidor API CRUD Artistas</title>
     <link rel="stylesheet" href="styles/estilo.css">
+    <link rel="stylesheet" href="styles/navbar.css">
     <script type="text/javascript" src="scripts/script_listallartists.js"></script>
     <script type="text/javascript" src="scripts/script_deleteartist.js"></script>
     <script type="text/javascript" src="scripts/script_listbyidartist.js"></script>
     <script type="text/javascript" src="components/navbar.js"></script>
 </head>
 <body>
-    <nav-bar></nav-bar>
+    <nav class="navbar">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#">Serviços</a></li>
+        </ul>
+        <form class="search-bar">
+          <input type="text" name="listbyid" id="listbyid" placeholder="Pesquisar...">
+          <button onclick="listById()">Pesquisar</button>
+        </form>
+    </nav>
     <div class="mydiv-1">
-        <input type="text" name="listbyid" id="listbyid">
-        <button onclick="listById()">Procurar</button>
         <div id="loading">
             <span>Buscando artistas...</span>
         </div>
