@@ -10,7 +10,7 @@ async function listById() {
         const result = await fetch(url, { method: "GET" });
         if (result.status === 200) {
             const artist = await result.json();
-            showProduct(artist);
+            showArtist(artist);
         } else {
             alert('Música não encontradnameo');
         }
@@ -20,7 +20,7 @@ async function listById() {
     }
 }
 
-function showProduct(artist) {
+function showArtist(artist) {
     let tab = `
         <thead>
             <tr>
