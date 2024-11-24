@@ -3,6 +3,16 @@ function clearLoading() {
     document.getElementById("listbyid").value = "";
 }
 
+function clearSearch() {
+    document.getElementById("listbyid").value = "";
+}
+
+function handleEnter(event) {
+    if (event.key === 'Enter') {
+      listById();
+    }
+  }
+
 function showArtists(artists) {
     let tab = `
         <thead>
