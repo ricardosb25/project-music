@@ -6,7 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0,
                                             maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>App Web Consumidor API CRUD Artistas</title>
+    <title>Artistas</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/estilo.css">
     <link rel="stylesheet" href="styles/navbar.css">
     <script type="text/javascript" src="scripts/script_listallartists.js"></script>
@@ -15,6 +16,9 @@
 </head>
 <body>
     <div class="navbar">
+        <div class="icon">
+            <i class="fa-solid fa-music" id="icon"></i>
+        </div>
         <div id="form">
             <label for="search">
                 <input class="input" required="" type="text" name="listbyid" id="listbyid" placeholder="Pesquisar...">
@@ -39,9 +43,9 @@
         <h1 class="titlemenu">Menu</h1>
         <div class="divsubmenu">
             <h2 class="titlesubmenu">Selecionar</h2>
-            <a href="listallartists.html"><button class="btn"><span>Artistas</span></button></a>
             <a href="listallsongs.html"><button class="btn"><span>Músicas</span></button></a>
-            <a><button class="btn" onclick="listAllArtists()"><span>Reload</span></button></a>
+            <a href="listallartists.html"><button class="btn"><span>Artistas</span></button></a>
+            <a><button class="btn" onclick="window.location.href='add.html';"><span>Cadastrar Novo</span></button></a>
         </div>
     </div>
     <div class="divlista">
@@ -49,16 +53,11 @@
             <span>Buscando artistas...</span>
         </div>
         <h1 class="title">Artistas</h1>
-        <button onclick="listAllArtists()">reload</button>
-        <div class="divbtnadd">
-            <button class="btnadd" type="button">
-                <span class="button__text">Add Item</span>
-                <span class="button__icon"><svg class="svgadd" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><line x1="12" x2="12" y1="5" y2="19"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg></span>
-            </button>
+        <div class="tabartists">
+            <table>
+                <tbody id="artists"></tbody>
+            </table>
         </div>
-        <table>
-            <tbody id="artists"></tbody>
-        </table>
     </div>
     </div>
 </body>

@@ -6,7 +6,7 @@ function clearTextFields(){
 }
 
 async function addArtist(){
-    const formE1 = document.querySelector("#formadd");
+    const formE1 = document.querySelector("#addartist");
     const formData = new FormData(formE1);
     const artist = Object.fromEntries(formData);
     const url = "http://localhost:8080/artista/add";

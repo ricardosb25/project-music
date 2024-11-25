@@ -29,7 +29,7 @@ function showArtists(artists) {
     `;
     for (let artist of artists) {
         tab += `
-            <tr>
+            <tr h>
                 <td>${artist.id}</td>
                 <td>${artist.nome}</td>
                 <td>${artist.idade}</td>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>App Web Consumidor API CRUD Artistas</title>
+        <link rel="stylesheet" href="styles/estilo.css">
+        <link rel="stylesheet" href="styles/addestilo.css">
+        <script type="text/javascript" src="scripts/script_addartist.js"></script>
+        <script type="text/javascript" src="scripts/script_addsong.js"></script>
+    </head>
+    <body>
+        <div>
+            <button onclick="window.location.href='listallsongs.html';" class="Btn">
+                <svg height="1.2em" class="arrow" viewBox="0 0 512 512"><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>
+                <p class="text">Voltar ao Inicio</p>
+            </button>
+        </div>
+        <div class="divadd">
+            <div class="wrapper">
+                    <div class="card-switch">
+                        <label class="switch">
+                        <input class="toggle" type="checkbox">
+                        <span class="slider"></span>
+                        <span class="card-side"></span>
+                        <div class="flip-card__inner">
+                            <div class="flip-card__front">
+                                <div class="title">Música</div>
+                                <form action="" id="addsong" name="addsong" class="flip-card__form">
+                                    <input type="text" placeholder="Nome" id="nome" name="nome" class="flip-card__input">
+                                    <input type="text" placeholder="Ano" id="ano" name="ano" class="flip-card__input">
+                                    <input type="text" placeholder="Banda" id="banda" name="banda" class="flip-card__input">
+                                    <input type="text" placeholder="Álbum" id="album" name="album" class="flip-card__input">
+                                    <button onclick="addSong()" class="flip-card__btn">Cadastrar</button>
+                                </form>
+                            </div>
+                            <div class="flip-card__back">
+                                <div class="title">Artista</div>
+                                <form action="" id="addartist" name="addsong" class="flip-card__form">
+                                    <input type="text" placeholder="Nome" id="nome" name="nome" class="flip-card__input">
+                                    <input type="text" placeholder="Idade" id="idade" name="idade" class="flip-card__input">
+                                    <input type="text" placeholder="País" id="pais" name="pais" class="flip-card__input">
+                                    <input type="text" placeholder="Banda" id="banda" name="banda" class="flip-card__input">
+                                    <button onclick="addArtist()" class="flip-card__btn">Cadastrar</button>
+                                </form>
+                            </div>
+                        </div>
+                        </label>
+                    </div>   
+            </div>
+        </div>
+    </body> 
+</html>

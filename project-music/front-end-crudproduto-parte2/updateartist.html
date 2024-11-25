@@ -1,33 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
+    <head>
+        <meta charset="UTF-8">
         <meta name="viewport"
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Editar Artista</title>
-    <link rel="stylesheet" href="styles.css">
-    <script type="text/javascript" src="scripts/script_updateartist.js"></script>
-</head>
-<body>
-    <a href="listallartists.html"><button>listar artistas</button></a>
-    <h1>Editar Artista</h1>
-    <form id="formEdit">
-        <input type="hidden" id="artistId" name="id">
-        
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required><br><br>
-
-        <label for="idade">Idade:</label>
-        <input type="number" id="idade" name="idade" required><br><br>
-
-        <label for="banda">Banda:</label>
-        <input type="text" id="banda" name="banda" required><br><br>
-
-        <label for="pais">País:</label>
-        <input type="text" id="pais" name="pais" required><br><br>
-
-        <button type="button" onclick="updateArtist()">Atualizar</button>
-    </form>
-</body>
+        <title>App Web Consumidor API CRUD Artistas</title>
+        <link rel="stylesheet" href="styles/estilo.css">
+        <link rel="stylesheet" href="styles/addestilo.css">
+        <script type="text/javascript" src="scripts/script_updateartist.js"></script>
+    </head>
+    <body>
+        <div>
+            <button onclick="window.location.href='listallsongs.html';" class="Btn">
+                <svg height="1.2em" class="arrow" viewBox="0 0 512 512"><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>
+                <p class="text">Voltar ao Inicio</p>
+            </button>
+        </div>
+        <div class="divadd">
+            <div class="wrapper">
+                    <div class="card-switch">
+                        <div class="flip-card__inner">
+                            <div class="flip-card__front">
+                                <div class="title">Artista</div>
+                                <form action="" id="editartist" name="editartist" class="flip-card__form">
+                                    <input type="hidden" id="artistId" name="id">
+                                    <input type="text" placeholder="Nome" id="nome" name="nome" class="flip-card__input" required>
+                                    <input type="text" placeholder="Idade" id="idade" name="idade" class="flip-card__input" required>
+                                    <input type="text" placeholder="País" id="pais" name="pais" class="flip-card__input" required>
+                                    <input type="text" placeholder="Banda" id="banda" name="banda" class="flip-card__input" required>
+                                    <button onclick="updateArtist()" class="flip-card__btn">Atualizar</button>
+                                </form>
+                            </div>
+                        </div>
+                        </label>
+                    </div>   
+            </div>
+        </div>
+    </body> 
 </html>
