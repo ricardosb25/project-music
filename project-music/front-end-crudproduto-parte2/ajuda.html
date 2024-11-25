@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>App Web Consumidor API CRUD Artistas</title>
+        <link rel="stylesheet" href="styles/estilo.css">
+        <link rel="stylesheet" href="styles/addestilo.css">
+    </head>
+    <body>
+        <div>
+            <button onclick="window.location.href='listallsongs.html';" class="Btn">
+                <svg height="1.2em" class="arrow" viewBox="0 0 512 512"><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>
+                <p class="text">Voltar ao Inicio</p>
+            </button>
+        </div>
+        <div class="divadd">
+            <div class="wrapper">
+                    <div class="card-switch">
+                        <div class="flip-card__inner">
+                            <div class="flip-card__front" style="width: 30vw; left: -5vw;">
+                                <div class="title">Especificação de EndPoints</div>
+                                <form action="" id="editartist" name="editartist" class="flip-card__form">
+                                    <p style="font-size: medium; margin: 0.1rem;">Cadastrar Artista : /artista/add</p>
+                                    <p style="font-size: medium; margin: 0.1rem;">Cadastrar Musica : /musica/add</p>
+                                    <p style="font-size: medium; margin: 0.1rem;">Deletar Artista : /artista/delete/{id}</p>
+                                    <p style="font-size: medium; margin: 0.1rem;">Deletar Musica : /musica/delete/{id}</p>
+                                    <p style="font-size: medium; margin: 0.1rem;">Listar Artistas : /artista/listall</p>
+                                    <p style="font-size: medium; margin: 0.1rem;">Listar Musicas : /musica/listall</p>
+                                    <p style="font-size: medium; margin: 0.1rem;">Buscar Artista : /artista/list/{id}</p>
+                                    <p style="font-size: medium; margin: 0.1rem;">Buscar Musica : /musica/list/{id}</p>
+                                    <p style="font-size: medium; margin: 0.1rem;">Atualizar Artista : /artista/update</p>
+                                    <p style="font-size: medium; margin: 0.1rem;">Atualizar Musica : /musica/update</p>
+                                </form>
+                            </div>
+                        </div>
+                        </label>
+                    </div>   
+            </div>
+        </div>
+    </body> 
+</html>
