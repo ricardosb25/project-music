@@ -6,6 +6,14 @@ function clearTextFields(){
 }
 
 async function addArtist(){
+    const nome = document.getElementById("nome").value.trim();
+    const idade = document.getElementById("idade").value.trim();
+    const banda = document.getElementById("banda").value.trim();
+    const pais = document.getElementById("pais").value.trim();
+    if (!nome || !idade || !banda || !pais) {
+        alert("Todos os campos são obrigatórios.");
+        return;
+    }
     const formE1 = document.querySelector("#addartist");
     const formData = new FormData(formE1);
     const artist = Object.fromEntries(formData);

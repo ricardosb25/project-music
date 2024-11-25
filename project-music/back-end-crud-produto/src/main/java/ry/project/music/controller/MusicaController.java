@@ -59,7 +59,7 @@ public class MusicaController {
     }
 
     //delete os dados de um musica cujo id é fornecido
-    @DeleteMapping("delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteSong(@PathVariable Integer id){
         musicaService.deleteSongByIdService(id);
         return ResponseEntity.noContent().build();
